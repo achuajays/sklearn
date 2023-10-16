@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from p.vtok import find_key_by_value
 import pandas as pd
 import numpy as np
-
+import os
 
 n = pd.read_csv('Iris.csv')
 x = n[[
@@ -41,7 +41,10 @@ p = knn.predict(x_te)
 
 acc = metrics.accuracy_score(y_te , p )
 print(acc)
-l = knn.predict([[5.1,3.5,1.4,0.2]])
+l = knn.predict([[5.0,3.3,1.4,0.2]])
 l = l[0]
 l = find_key_by_value(label , l)
+os.system('cls')
 print('predict = ' , l)
+k = input()
+os.system('cls')
